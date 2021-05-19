@@ -21,26 +21,22 @@ public class Homework {
         appleBox.add(apple1);
         appleBox.add(new Apple(4f));
 
-        Box<Apple> appleBox2 = new Box<>();
-        appleBox2.add(new Apple(4.4f));
-
         Box<Apple> nullAppleBox = new Box<>();
-        Box<Orange> nullOrangeBox = new Box<>();
 
         Box<Orange> orangeBox = new Box<>();
         orangeBox.add(new Orange(2.3f));
         orangeBox.add(new Orange(6.1f));
         orangeBox.add(new Orange(4f));
 
-
-        orangeBox.print();
+//        System.out.println(orangeBox.getWeight());
 
         System.out.println(appleBox.compare(orangeBox.getWeight()));
+
+        orangeBox.print();
 
         appleBox.passValue(nullAppleBox.arrayList);
         nullAppleBox.print();
 
-        nullAppleBox.passValue(appleBox2.arrayList);
 
 
     }

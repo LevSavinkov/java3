@@ -3,7 +3,7 @@ package ru.lesson1.ru;
 import java.util.ArrayList;
 
 public class Box <T extends Fruit>  {
-    float endWeight = 0;
+
     ArrayList<T> arrayList = new ArrayList<>();
 
     void add(T t){
@@ -11,6 +11,7 @@ public class Box <T extends Fruit>  {
     }
 
     public float getWeight() {
+        float endWeight = 0;
         for (int i = 0; i < arrayList.size(); i++) {
             endWeight += arrayList.get(i).getWeight();
         }
@@ -18,7 +19,7 @@ public class Box <T extends Fruit>  {
     }
 
     public boolean compare (float weight) {
-        return endWeight - weight < 0.001;
+        return getWeight() == weight;
     }
 
     public void print (){

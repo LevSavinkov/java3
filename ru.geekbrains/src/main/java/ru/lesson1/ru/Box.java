@@ -19,7 +19,7 @@ public class Box <T extends Fruit>  {
     }
 
     public boolean compare (Box t) {
-        return getWeight() - t.getWeight() < 0.001;
+        return Math.abs(getWeight() - t.getWeight()) < 0.001;
     }
 
     public void print (){
@@ -31,7 +31,7 @@ public class Box <T extends Fruit>  {
         System.out.println("Вес всех фруктов = " + getWeight());
     }
 
-    public Box passValue (Box passArr) {
+    public void passValue (Box passArr) {
         if (passArr.arrayList.isEmpty())
         for (int i = 0; i < arrayList.size(); i++) {
             passArr.arrayList.add(arrayList.get(i));
@@ -39,8 +39,6 @@ public class Box <T extends Fruit>  {
             System.out.println("В корзине уже есть фрукты");
         }
         arrayList.clear();
-        return passArr;
-
     }
 
 }

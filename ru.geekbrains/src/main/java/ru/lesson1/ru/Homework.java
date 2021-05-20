@@ -29,12 +29,11 @@ public class Homework {
         Box<Orange> orangeBox = new Box<>();
         orangeBox.add(new Orange(2.3f));
         orangeBox.add(new Orange(6.1f));
-        orangeBox.add(new Orange(4f));
+        orangeBox.add(new Orange(4.004f));
 
-//        System.out.println(orangeBox.getWeight());
-
-        System.out.println(appleBox.compare(appleBox2));
-        System.out.println(orangeBox.compare(appleBox));
+        System.out.printf("Коробка с аплесинами = %.3f\n",orangeBox.getWeight());
+        System.out.printf("Коробка с яблоками = %.3f\n",appleBox.getWeight());
+        System.out.println(appleBox.compare(orangeBox));
 
         orangeBox.print();
 

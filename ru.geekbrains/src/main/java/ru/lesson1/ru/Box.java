@@ -18,8 +18,8 @@ public class Box <T extends Fruit>  {
         return endWeight;
     }
 
-    public boolean compare (float weight) {
-        return getWeight() == weight;
+    public boolean compare (Box t) {
+        return getWeight() - t.getWeight() < 0.001;
     }
 
     public void print (){
@@ -31,15 +31,16 @@ public class Box <T extends Fruit>  {
         System.out.println("Вес всех фруктов = " + getWeight());
     }
 
-    public ArrayList<T> passValue (ArrayList <T> passArr) {
-        if (passArr.isEmpty())
+    public Box passValue (Box passArr) {
+        if (passArr.arrayList.isEmpty())
         for (int i = 0; i < arrayList.size(); i++) {
-            passArr.add(arrayList.get(i));
+            passArr.arrayList.add(arrayList.get(i));
         } else {
             System.out.println("В корзине уже есть фрукты");
         }
         arrayList.clear();
         return passArr;
+
     }
 
 }

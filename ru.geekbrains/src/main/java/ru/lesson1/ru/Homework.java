@@ -10,7 +10,7 @@ public class Homework {
         String[] arr = new String[]{"Test1", "Test2", "Test3", "Test4", "Test5"};
         Integer[] arr2 = new Integer[]{1, 2, 4, 6, 7};
 
-        swapPlacesArr(arr, 2, 0);
+        swapPlacesArr(arr, 3, 0);
         prototypeArr(arr2);
 
         Apple apple = new Apple(2.3f);
@@ -21,6 +21,9 @@ public class Homework {
         appleBox.add(apple1);
         appleBox.add(new Apple(4f));
 
+        Box<Apple> appleBox2 = new Box<>();
+        appleBox2.add(new Apple(4f));
+
         Box<Apple> nullAppleBox = new Box<>();
 
         Box<Orange> orangeBox = new Box<>();
@@ -30,11 +33,12 @@ public class Homework {
 
 //        System.out.println(orangeBox.getWeight());
 
-        System.out.println(appleBox.compare(orangeBox.getWeight()));
+        System.out.println(appleBox.compare(appleBox2));
+        System.out.println(orangeBox.compare(appleBox));
 
         orangeBox.print();
 
-        appleBox.passValue(nullAppleBox.arrayList);
+        appleBox2.passValue(nullAppleBox);
         nullAppleBox.print();
 
 
@@ -42,12 +46,10 @@ public class Homework {
     }
 
     static <T> void swapPlacesArr(T[] arr, int valueOne, int valueTwo) {
-        T temporaryOne;
-        T temporaryTwo;
-        temporaryOne = arr[valueTwo];
-        temporaryTwo = arr[valueOne];
-        arr[valueOne] = temporaryOne;
-        arr[valueTwo] = temporaryTwo;
+        T temporary;
+        temporary = arr[valueOne];
+        arr[valueOne] = arr[valueTwo];
+        arr[valueTwo] = temporary;
         System.out.println(Arrays.toString(arr));
     }
 
